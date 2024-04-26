@@ -623,17 +623,20 @@ right:0;
 }
 
 .label .thelabel {
+    position: relative;
+    width: 100px;
+    padding: 6px 11px 13px -13px;
+    margin: 168px 27px 10px -70px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #000;
+    /* background-color: #337ab7; */
+    text-shadow: 0px 1px 2px #bbb;
 
-position: relative;
-width: 100px;
-padding: 6px 50px 6px 15px;
-margin: 40px 50px 10px -71px;
-color: #fff;
-font-size:18px;
-font-weight:bold;
-background-color: #337ab7;
-text-shadow: 0px 1px 2px #bbb ;
-
+}
+.product-container{
+    padding: 10%;
 }
 
 .label .thelabel:before,
