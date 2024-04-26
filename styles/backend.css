@@ -1,3 +1,10 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
 html {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   line-height: 1.15;
@@ -909,25 +916,19 @@ img {
 }
 
 .hero .btn1 {
-  text-decoration: none;
-  text-align: center;
-  color: gray;
-  font-size: 14px;
-  font-family: Roboto;
-  border: 1.5px solid gray;
-  background-color: #f8f8f8;
-  position: relative;
-  line-height: 40px;
-  float: right;
-  right: 210px;
-  top: 80px;
-  display: inline-block;
-  padding-left: 10px;
-  padding-right: 10px;
+margin: auto;
+    padding: 15px;
+    width: 15rem;
+    text-align: center;
+    color: #000;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
 }
 
 .hero .btn1:hover {
-  background-color: #009595;
+  transition: 0.5s ease-in all;
+  background-color: transparent;
   color: white;
 }
 
