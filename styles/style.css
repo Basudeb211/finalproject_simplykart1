@@ -235,7 +235,7 @@ padding-left:25px;
 }
 
 .single {
-width:290px;
+/* width:290px; */
 }
 
 @media (max-width: 768px) {
@@ -252,6 +252,7 @@ background:#fff;
 border: solid 1px #e6e6e6;
 box-sizing: border-box;
 margin-bottom: 30px;
+height: 60rem;
 }
 
 #content .product .text p.price {
