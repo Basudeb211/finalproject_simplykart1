@@ -116,61 +116,61 @@ $p_cat_title = $row_p_cat['p_cat_title'];
 
 <div class="col-sm-6"><!-- col-sm-6 Starts -->
 
-<div id="mainImage"><!-- mainImage Starts -->
+    <div id="mainImage"><!-- mainImage Starts -->
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
-<ol class="carousel-indicators"><!-- carousel-indicators Starts -->
+    <ol class="carousel-indicators"><!-- carousel-indicators Starts -->
 
-<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-<li data-target="#myCarousel" data-slide-to="1"></li>
-<li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
 
-</ol><!-- carousel-indicators Ends -->
+    </ol><!-- carousel-indicators Ends -->
 
-<div class="carousel-inner"><!-- carousel-inner Starts -->
+    <div class="carousel-inner"><!-- carousel-inner Starts -->
 
-<div class="item active">
-<center>
-<img src="admin_area/product_images/<?php echo $pro_img1; ?>" class="img-responsive">
-</center>
-</div>
+    <div class="item active">
+    <center>
+    <img src="admin_area/product_images/<?php echo $pro_img1; ?>" class="img-responsive">
+    </center>
+    </div>
 
-<div class="item">
-<center>
-<img src="admin_area/product_images/<?php echo $pro_img2; ?>" class="img-responsive">
-</center>
-</div>
+    <div class="item">
+    <center>
+    <img src="admin_area/product_images/<?php echo $pro_img2; ?>" class="img-responsive">
+    </center>
+    </div>
 
-<div class="item">
-<center>
-<img src="admin_area/product_images/<?php echo $pro_img3; ?>" class="img-responsive">
-</center>
-</div>
+    <div class="item">
+    <center>
+    <img src="admin_area/product_images/<?php echo $pro_img3; ?>" class="img-responsive">
+    </center>
+    </div>
 
-</div><!-- carousel-inner Ends -->
+    </div><!-- carousel-inner Ends -->
 
-<a href="#myCarousel" class="left carousel-control" data-slide="prev"><!-- left carousel-control Starts -->
+    <a href="#myCarousel" class="left carousel-control" data-slide="prev"><!-- left carousel-control Starts -->
 
-<span class="glyphicon glyphicon-chevron-left"> </span>
+    <span class="glyphicon glyphicon-chevron-left"> </span>
 
-<span class="sr-only"> Previous </span>
+    <span class="sr-only"> Previous </span>
 
-</a><!-- left carousel-control Ends -->
+    </a><!-- left carousel-control Ends -->
 
-<a class="right carousel-control" href="#myCarousel" data-slide="next"><!-- right carousel-control Starts -->
+    <a class="right carousel-control" href="#myCarousel" data-slide="next"><!-- right carousel-control Starts -->
 
-<span class="glyphicon glyphicon-chevron-right"> </span>
+    <span class="glyphicon glyphicon-chevron-right"> </span>
 
-<span class="sr-only"> Next </span>
+    <span class="sr-only"> Next </span>
 
-</a><!-- right carousel-control Ends -->
+    </a><!-- right carousel-control Ends -->
 
-</div>
+    </div>
 
-</div><!-- mainImage Ends -->
+  </div><!-- mainImage Ends -->
 
-<?php echo $product_label; ?>
+  <?php echo $product_label; ?>
 
 </div><!-- col-sm-6 Ends -->
 
@@ -834,49 +834,46 @@ $product_label = "
 
 echo "
 
-<div class='col-md-3 col-sm-6 center-responsive' >
+<div class='col-md-3 col-sm-6 center-responsive' > 
 
-<div class='product' >
+  <div class='product' >
 
-<a href='$pro_url' >
+      <a href='$pro_url' >
 
-<img src='admin_area/product_images/$pro_img1' class='img-responsive' >
+        <img src='admin_area/product_images/$pro_img1' class='img-responsive' >
 
-</a>
+      </a>
 
-<div class='text' >
+    <div class='text' >
 
-<center>
+      <center>
 
-<p class='btn btn-primary'> $manufacturer_name </p>
+        <p class='btn btn-primary'> $manufacturer_name </p>
 
-</center>
+      </center>
 
-<hr>
+      <hr>
 
-<h3><a href='$pro_url' >$pro_title</a></h3>
+      <h3>
+        <a href='$pro_url' >$pro_title</a>
+      </h3>
 
-<p class='price' > $product_price $product_psp_price </p>
+        <p class='price' > $product_price $product_psp_price </p>
 
-<p class='buttons' >
+        <p class='buttons' >
 
-<a href='$pro_url' class='btn btn-default' >View details</a>
+          <a href='$pro_url' class='btn btn-default' >View details</a>
 
-<a href='$pro_url' class='btn btn-primary'>
+          <a href='$pro_url' class='btn btn-primary'>
 
-<i class='fa fa-shopping-cart'></i> Add to cart
+            <i class='fa fa-shopping-cart'></i> Add to cart
 
-</a>
+          </a>
 
-
-</p>
-
-</div>
-
-$product_label
-
-
-</div>
+        </p>
+  </div>
+   $product_label
+  </div>
 
 </div>
 

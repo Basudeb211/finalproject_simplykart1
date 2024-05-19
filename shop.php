@@ -2,60 +2,58 @@
 
 session_start();
 
-include("includes/db.php");
-include("includes/header.php");
-include("functions/functions.php");
-include("includes/main.php");
+include ("includes/db.php");
+include ("includes/header.php");
+include ("functions/functions.php");
+include ("includes/main.php");
 
 ?>
-  <!-- MAIN -->
-  <main>
-    <!-- HERO -->
-    <div class="nero">
-      <div class="nero__heading">
-        <span class="nero__bold">shop</span> AT SIMPLYKART
-      </div>
-      <p class="nero__text">
-      </p>
+<!-- MAIN -->
+<main>
+  <!-- HERO -->
+  <div class="nero">
+    <div class="nero__heading">
+      <span class="nero__bold">shop</span> AT SIMPLYKART
     </div>
-  </main>
+    <p class="nero__text">
+    </p>
+  </div>
+</main>
 
 
-<div id="content" ><!-- content Starts -->
-<div class="container" ><!-- container Starts -->
+<div id="content"><!-- content Starts -->
+  <div class="container"><!-- container Starts -->
 
-<div class="col-md-12" ><!--- col-md-12 Starts -->
+    <div class="col-md-12"><!--- col-md-12 Starts -->
 
+    </div><!--- col-md-12 Ends -->
 
+    <div class="col-md-3"><!-- col-md-3 Starts -->
 
-</div><!--- col-md-12 Ends -->
+      <?php include ("includes/sidebar.php"); ?>
 
-<div class="col-md-3"><!-- col-md-3 Starts -->
+    </div><!-- col-md-3 Ends -->
 
-<?php include("includes/sidebar.php"); ?>
-
-</div><!-- col-md-3 Ends -->
-
-<div class="col-md-9" ><!-- col-md-9 Starts --->
+    <div class="col-md-9"><!-- col-md-9 Starts --->
 
 
-<?php getProducts(); ?>
+      <?php getProducts(); ?>
 
-</div><!-- row Ends -->
+    </div><!-- row Ends -->
 
-<center><!-- center Starts -->
+    <center><!-- center Starts -->
 
-<ul class="pagination" ><!-- pagination Starts -->
+      <ul class="pagination"><!-- pagination Starts -->
 
-<?php getPaginator(); ?>
+        <?php getPaginator(); ?>
 
-</ul><!-- pagination Ends -->
+      </ul><!-- pagination Ends -->
 
-</center><!-- center Ends -->
+    </center><!-- center Ends -->
 
 
 
-</div><!-- col-md-9 Ends --->
+  </div><!-- col-md-9 Ends --->
 
 
 
@@ -68,7 +66,7 @@ include("includes/main.php");
 
 <?php
 
-include("includes/footer.php");
+include ("includes/footer.php");
 
 ?>
 
@@ -78,84 +76,84 @@ include("includes/footer.php");
 
 <script>
 
-$(document).ready(function(){
+  $(document).ready(function () {
 
-/// Hide And Show Code Starts ///
+    /// Hide And Show Code Starts ///
 
-$('.nav-toggle').click(function(){
+    $('.nav-toggle').click(function () {
 
-$(".panel-collapse,.collapse-data").slideToggle(700,function(){
+      $(".panel-collapse,.collapse-data").slideToggle(700, function () {
 
-if($(this).css('display')=='none'){
+        if ($(this).css('display') == 'none') {
 
-$(".hide-show").html('Show');
+          $(".hide-show").html('Show');
 
-}
-else{
+        }
+        else {
 
-$(".hide-show").html('Hide');
+          $(".hide-show").html('Hide');
 
-}
+        }
 
-});
+      });
 
-});
+    });
 
-/// Hide And Show Code Ends ///
+    /// Hide And Show Code Ends ///
 
-/// Search Filters code Starts ///
+    /// Search Filters code Starts ///
 
-$(function(){
+    $(function () {
 
-$.fn.extend({
+      $.fn.extend({
 
-filterTable: function(){
+        filterTable: function () {
 
-return this.each(function(){
+          return this.each(function () {
 
-$(this).on('keyup', function(){
+            $(this).on('keyup', function () {
 
-var $this = $(this),
+              var $this = $(this),
 
-search = $this.val().toLowerCase(),
+                search = $this.val().toLowerCase(),
 
-target = $this.attr('data-filters'),
+                target = $this.attr('data-filters'),
 
-handle = $(target),
+                handle = $(target),
 
-rows = handle.find('li a');
+                rows = handle.find('li a');
 
-if(search == '') {
+              if (search == '') {
 
-rows.show();
+                rows.show();
 
-} else {
+              } else {
 
-rows.each(function(){
+                rows.each(function () {
 
-var $this = $(this);
+                  var $this = $(this);
 
-$this.text().toLowerCase().indexOf(search) === -1 ? $this.hide() : $this.show();
+                  $this.text().toLowerCase().indexOf(search) === -1 ? $this.hide() : $this.show();
 
-});
+                });
 
-}
+              }
 
-});
+            });
 
-});
+          });
 
-}
+        }
 
-});
+      });
 
-$('[data-action="filter"][id="dev-table-filter"]').filterTable();
+      $('[data-action="filter"][id="dev-table-filter"]').filterTable();
 
-});
+    });
 
-/// Search Filters code Ends ///
+    /// Search Filters code Ends ///
 
-});
+  });
 
 
 
@@ -165,188 +163,188 @@ $('[data-action="filter"][id="dev-table-filter"]').filterTable();
 <script>
 
 
-$(document).ready(function(){
+  $(document).ready(function () {
 
-  // getProducts Function Code Starts
+    // getProducts Function Code Starts
 
-  function getProducts(){
+    function getProducts() {
 
-  // Manufacturers Code Starts
+      // Manufacturers Code Starts
 
-    var sPath = '';
+      var sPath = '';
 
-var aInputs = $('li').find('.get_manufacturer');
+      var aInputs = $('li').find('.get_manufacturer');
 
-var aKeys = Array();
+      var aKeys = Array();
 
-var aValues = Array();
+      var aValues = Array();
 
-iKey = 0;
+      iKey = 0;
 
-$.each(aInputs,function(key,oInput){
+      $.each(aInputs, function (key, oInput) {
 
-if(oInput.checked){
+        if (oInput.checked) {
 
-aKeys[iKey] =  oInput.value
+          aKeys[iKey] = oInput.value
 
-};
+        };
 
-iKey++;
+        iKey++;
 
-});
+      });
 
-if(aKeys.length>0){
+      if (aKeys.length > 0) {
 
-var sPath = '';
+        var sPath = '';
 
-for(var i = 0; i < aKeys.length; i++){
+        for (var i = 0; i < aKeys.length; i++) {
 
-sPath = sPath + 'man[]=' + aKeys[i]+'&';
+          sPath = sPath + 'man[]=' + aKeys[i] + '&';
 
-}
+        }
 
-}
+      }
 
-// Manufacturers Code ENDS
+      // Manufacturers Code ENDS
 
-// Products Categories Code Starts
+      // Products Categories Code Starts
 
-var aInputs = Array();
+      var aInputs = Array();
 
-var aInputs = $('li').find('.get_p_cat');
+      var aInputs = $('li').find('.get_p_cat');
 
-var aKeys = Array();
+      var aKeys = Array();
 
-var aValues = Array();
+      var aValues = Array();
 
-iKey = 0;
+      iKey = 0;
 
-$.each(aInputs,function(key,oInput){
+      $.each(aInputs, function (key, oInput) {
 
-if(oInput.checked){
+        if (oInput.checked) {
 
-aKeys[iKey] =  oInput.value
+          aKeys[iKey] = oInput.value
 
-};
+        };
 
-iKey++;
+        iKey++;
 
-});
+      });
 
-if(aKeys.length>0){
+      if (aKeys.length > 0) {
 
-for(var i = 0; i < aKeys.length; i++){
+        for (var i = 0; i < aKeys.length; i++) {
 
-sPath = sPath + 'p_cat[]=' + aKeys[i]+'&';
+          sPath = sPath + 'p_cat[]=' + aKeys[i] + '&';
 
-}
+        }
 
-}
+      }
 
-// Products Categories Code ENDS
+      // Products Categories Code ENDS
 
-   // Categories Code Starts
+      // Categories Code Starts
 
-var aInputs = Array();
+      var aInputs = Array();
 
-var aInputs = $('li').find('.get_cat');
+      var aInputs = $('li').find('.get_cat');
 
-var aKeys  = Array();
+      var aKeys = Array();
 
-var aValues = Array();
+      var aValues = Array();
 
-iKey = 0;
+      iKey = 0;
 
-    $.each(aInputs,function(key,oInput){
+      $.each(aInputs, function (key, oInput) {
 
-    if(oInput.checked){
+        if (oInput.checked) {
 
-    aKeys[iKey] =  oInput.value
+          aKeys[iKey] = oInput.value
 
-};
+        };
 
-    iKey++;
+        iKey++;
 
-});
+      });
 
-if(aKeys.length>0){
+      if (aKeys.length > 0) {
 
-    for(var i = 0; i < aKeys.length; i++){
+        for (var i = 0; i < aKeys.length; i++) {
 
-    sPath = sPath + 'cat[]=' + aKeys[i]+'&';
+          sPath = sPath + 'cat[]=' + aKeys[i] + '&';
 
-}
+        }
 
-}
+      }
 
-   // Categories Code ENDS
+      // Categories Code ENDS
 
-   // Loader Code Starts
+      // Loader Code Starts
 
-$('#wait').html('<img src="images/load.gif">');
+      $('#wait').html('<img src="images/load.gif">');
 
-// Loader Code ENDS
+      // Loader Code ENDS
 
-// ajax Code Starts
+      // ajax Code Starts
 
-$.ajax({
+      $.ajax({
 
-url:"load.php",
+        url: "load.php",
 
-method:"POST",
+        method: "POST",
 
-data: sPath+'sAction=getProducts',
+        data: sPath + 'sAction=getProducts',
 
-success:function(data){
+        success: function (data) {
 
- $('#Products').html('');
+          $('#Products').html('');
 
- $('#Products').html(data);
+          $('#Products').html(data);
 
- $("#wait").empty();
+          $("#wait").empty();
 
-}
+        }
 
-});
+      });
 
-    $.ajax({
-url:"load.php",
-method:"POST",
-data: sPath+'sAction=getPaginator',
-success:function(data){
-$('.pagination').html('');
-$('.pagination').html(data);
-}
+      $.ajax({
+        url: "load.php",
+        method: "POST",
+        data: sPath + 'sAction=getPaginator',
+        success: function (data) {
+          $('.pagination').html('');
+          $('.pagination').html(data);
+        }
+
+      });
+
+      // ajax Code Ends
+
+    }
+
+    // getProducts Function Code Ends
+
+    $('.get_manufacturer').click(function () {
+
+      getProducts();
 
     });
 
-// ajax Code Ends
 
-   }
+    $('.get_p_cat').click(function () {
 
-   // getProducts Function Code Ends
+      getProducts();
 
-$('.get_manufacturer').click(function(){
+    });
 
-getProducts();
+    $('.get_cat').click(function () {
 
-});
+      getProducts();
 
-
-  $('.get_p_cat').click(function(){
-
-getProducts();
-
-});
-
-$('.get_cat').click(function(){
-
-getProducts();
-
-});
+    });
 
 
- });
+  });
 
 </script>
 
