@@ -118,11 +118,11 @@
 		<div class="container clearfix">
 
 			<div class="copyright">
-				&copy; 2018 Avenue Fashion&trade;
+				&copy; 2024 Simplykart &trade;
 			</div>
 
 			<div class="developer">
-				Dev by Yasser Dalouzi
+				Dev by Simplykart&trade;
 			</div>
 
 			<div class="designby">
