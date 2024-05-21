@@ -75,17 +75,17 @@ if(!isset($_SESSION['customer_email'])){
           <ul class="categories">
 
             <li class="categories__item">
-              <a class="categories__link" href="#">
+              <!-- <a class="categories__link" href="men.php">
                 Mens
                
-              </a>
+              </a> -->
               </li>
 
             <li class="categories__item">
-              <a class="categories__link" href="#">
+              <!-- <a class="categories__link" href="#">
                 Womens
                
-              </a>
+              </a> -->
             </li>
 
             <li class="categories__item">
