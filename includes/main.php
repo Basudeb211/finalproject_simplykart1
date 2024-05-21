@@ -29,34 +29,34 @@
         </div>
         
         
-        <ul class="login">
+      <ul class="login">
 
-<li class="login__item">
-<?php
-if(!isset($_SESSION['customer_email'])){
-  echo '<a href="customer_register.php" class="login__link">Register</a>';
-} 
-  else
-  { 
-      echo '<a href="customer/my_account.php?my_orders" class="login__link">My Account</a>';
-  }   
-?>  
-</li>
+          <li class="login__item">
+          <?php
+          if(!isset($_SESSION['customer_email'])){
+            echo '<a href="customer_register.php" class="login__link">Register</a>';
+          } 
+            else
+            { 
+                echo '<a href="customer/my_account.php?my_orders" class="login__link">My Account</a>';
+            }   
+          ?>  
+          </li>
 
 
-<li class="login__item">
-<?php
-if(!isset($_SESSION['customer_email'])){
-  echo '<a href="checkout.php" class="login__link">Sign In</a>';
-} 
-  else
-  { 
-      echo '<a href="./logout.php" class="login__link">Logout</a>';
-  }   
-?>  
-  
-</li>
-</ul>
+          <li class="login__item">
+          <?php
+          if(!isset($_SESSION['customer_email'])){
+            echo '<a href="checkout.php" class="login__link">Sign In</a>';
+          } 
+            else
+            { 
+                echo '<a href="./logout.php" class="login__link">Logout</a>';
+            }   
+          ?>  
+            
+          </li>
+      </ul>
       
       </div>
     </div>
@@ -111,7 +111,7 @@ if(!isset($_SESSION['customer_email'])){
                     <div class="dropdown__heading">Account Settings</div>
                     <ul class="dropdown__items">
                       <li class="dropdown__item">
-                        <a href="#" class="dropdown__link">My Wishlist</a>
+                        <a href="./customer/my_account.php?my_wishlist" class="dropdown__link">My Wishlist</a>
                       </li>
                       <li class="dropdown__item">
                         <a href="#" class="dropdown__link">My Orders</a>
