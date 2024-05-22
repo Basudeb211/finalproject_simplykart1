@@ -1,16 +1,16 @@
 
 <center><!-- center Starts -->
 
-<h1>My Orders</h1>
+    <h1>My Orders</h1>
 
-<p class="lead"> Your orders on one place.</p>
+    <p class="lead"> Your orders on one place.</p>
 
-<p class="text-muted" >
+    <p class="text-muted" >
 
-If you have any questions, please feel free to <a href="../contact.php" > contact us,</a> our customer service center is working for you 24/7.
-
-
-</p>
+        If you have any questions, please feel free to
+        <a href="../contact.php" > contact us,</a> 
+        our customer service center is working for you 24/7.
+    </p>
 
 
 </center><!-- center Ends -->
@@ -19,106 +19,105 @@ If you have any questions, please feel free to <a href="../contact.php" > contac
 
 <div class="table-responsive" ><!-- table-responsive Starts -->
 
-<table class="table table-bordered table-hover" ><!-- table table-bordered table-hover Starts -->
+    <table class="table table-bordered table-hover" ><!-- table table-bordered table-hover Starts -->
 
-<thead><!-- thead Starts -->
+        <thead><!-- thead Starts -->
+            <tr>
+                <th>#</th>
+                <th>Amount</th>
+                <th>Invoice</th>
+                <th>Qty</th>
+                <th>Size</th>
+                <th>Order Date</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
 
-<tr>
+        </thead><!-- thead Ends -->
 
-<th>#</th>
-<th>Amount</th>
-<th>Invoice</th>
-<th>Qty</th>
-<th>Size</th>
-<th>Order Date</th>
-<th>Status</th>
-<th>Action</th>
+    <tbody><!--- tbody Starts --->
 
+        <?php
 
-</tr>
+        $customer_session = $_SESSION['customer_email'];
 
-</thead><!-- thead Ends -->
+        $get_customer = "select * from customers where customer_email='$customer_session'";
 
-<tbody><!--- tbody Starts --->
+        $run_customer = mysqli_query($con,$get_customer);
 
-<?php
+        $row_customer = mysqli_fetch_array($run_customer);
 
-$customer_session = $_SESSION['customer_email'];
+        $customer_id = $row_customer['customer_id'];
 
-$get_customer = "select * from customers where customer_email='$customer_session'";
+        $get_orders = "select * from customer_orders where customer_id='$customer_id'";
 
-$run_customer = mysqli_query($con,$get_customer);
+        $run_orders = mysqli_query($con,$get_orders);
 
-$row_customer = mysqli_fetch_array($run_customer);
+        $i = 0;
 
-$customer_id = $row_customer['customer_id'];
+        while($row_orders = mysqli_fetch_array($run_orders))
+        {
 
-$get_orders = "select * from customer_orders where customer_id='$customer_id'";
+            $order_id = $row_orders['order_id'];
 
-$run_orders = mysqli_query($con,$get_orders);
+            $due_amount = $row_orders['due_amount'];
 
-$i = 0;
+            $invoice_no = $row_orders['invoice_no'];
 
-while($row_orders = mysqli_fetch_array($run_orders)){
+            $qty = $row_orders['qty'];
 
-$order_id = $row_orders['order_id'];
+            $size = $row_orders['size'];
 
-$due_amount = $row_orders['due_amount'];
+            $order_date = substr($row_orders['order_date'],0,11);
 
-$invoice_no = $row_orders['invoice_no'];
+            $order_status = $row_orders['order_status'];
 
-$qty = $row_orders['qty'];
+            $i++;
 
-$size = $row_orders['size'];
+            if($order_status=='pending'){
 
-$order_date = substr($row_orders['order_date'],0,11);
+             $order_status = "<b style='color:red;'>Unpaid</b>";
 
-$order_status = $row_orders['order_status'];
+            }
+            else{
 
-$i++;
+             $order_status = "<b style='color:green;'>Paid</b>";
 
-if($order_status=='pending'){
+            }
 
-$order_status = "<b style='color:red;'>Unpaid</b>";
+            ?>
 
-}
-else{
+            <tr><!-- tr Starts -->
 
-$order_status = "<b style='color:green;'>Paid</b>";
+                <th><?php echo $i; ?></th>
 
-}
+                <td>₹<?php echo $due_amount; ?></td>
 
-?>
+                <td><?php echo $invoice_no; ?></td>
 
-<tr><!-- tr Starts -->
+                <td><?php echo $qty; ?></td>
 
-<th><?php echo $i; ?></th>
+                <td><?php echo $size; ?></td>
 
-<td>$<?php echo $due_amount; ?></td>
+                <td><?php echo $order_date; ?></td>
 
-<td><?php echo $invoice_no; ?></td>
+                <td><?php echo $order_status; ?></td>
 
-<td><?php echo $qty; ?></td>
-
-<td><?php echo $size; ?></td>
-
-<td><?php echo $order_date; ?></td>
-
-<td><?php echo $order_status; ?></td>
-
-<td>
-<a href="confirm.php?order_id=<?php echo $order_id; ?>" target="blank" class="btn btn-success btn-xs" > Confirm If Paid </a>
-</td>
+                <td>
+                    <a href="confirm.php?order_id=<?php echo $order_id; ?>" target="blank" class="btn btn-success btn-xs" > Confirm If Paid </a>
+                </td>
 
 
-</tr><!-- tr Ends -->
+            </tr><!-- tr Ends -->
 
-<?php } ?>
+            <?php
+        } 
+        ?>
 
-</tbody><!--- tbody Ends --->
+    </tbody><!--- tbody Ends --->
 
 
-</table><!-- table table-bordered table-hover Ends -->
+    </table><!-- table table-bordered table-hover Ends -->
 
 </div><!-- table-responsive Ends -->
 

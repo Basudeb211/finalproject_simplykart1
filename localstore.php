@@ -39,7 +39,7 @@ include("includes/main.php");
                         $store_desc = $row_stores['store_desc'];
                         $store_button = $row_stores['store_button'];
                         $store_url = $row_stores['store_url'];
-                ?>
+                    ?>
                         <div class="col-md-4 col-sm-6 box"><!-- col-md-4 col-sm-6 box Starts -->
                             <img src="admin_area/store_images/<?php echo $store_image; ?>" class="img-responsive">
                             <h2 align="center"> <?php echo $store_title; ?> </h2>
